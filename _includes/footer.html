@@ -4,7 +4,7 @@
     <i class="fas fa-code"></i> with <i class="fas fa-heart"></i>
     by <strong>{{ site.author.name }}</strong>
   </small>
-
+  <small></small>
   {% include social.html %}
 
   {%- assign theme_name = "portfolYOU" -%}
@@ -12,5 +12,7 @@
   <small id="attribution">
     theme <a href="{{ theme_repo }}">{{ theme_name }}</a>
   </small>
+  
+  <small>&copy; Copyright {{ 'now' | date: "%Y" }}, The unspoken ML, All Rights Reserved.</small> 
   
 </footer>
