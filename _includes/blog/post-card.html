@@ -12,6 +12,14 @@
     {%- assign badge_style = badge_style | append: post.color -%}
   {%- endif -%}
   
+{%- else -%}
+  {%- assign card_style = post.color | prepend: 'border border-' -%}
+  {%- if post.color -%}
+    {%- assign badge_style =  post.color | prepend: 'badge-' -%}
+  {%- endif -%}
+{%- endif -%}
+
+
 {%- if post.style == 'fill' -%}
   {%- assign card_style = post.color | prepend: 'bg-' -%}
   {%- if post.color == 'dark' -%}
@@ -20,13 +28,13 @@
     {%- assign badge_style = badge_style | append: post.color -%}
   {%- endif -%}
   
-
 {%- else -%}
   {%- assign card_style = post.color | prepend: 'border border-' -%}
   {%- if post.color -%}
     {%- assign badge_style =  post.color | prepend: 'badge-' -%}
   {%- endif -%}
 {%- endif -%}
+
 
 {%- comment -%} Determine Post URL {%- endcomment -%}
 {%- if post.external_url -%}
