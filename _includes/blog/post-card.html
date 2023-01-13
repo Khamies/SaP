@@ -11,6 +11,16 @@
     {%- assign badge_style = 'badge-light text-' -%}
     {%- assign badge_style = badge_style | append: post.color -%}
   {%- endif -%}
+  
+{%- if post.style == 'fill' -%}
+  {%- assign card_style = post.color | prepend: 'bg-' -%}
+  {%- if post.color == 'dark' -%}
+    {%- assign text_style  = 'text-black' -%}
+    {%- assign badge_style = 'badge-light text-' -%}
+    {%- assign badge_style = badge_style | append: post.color -%}
+  {%- endif -%}
+  
+
 {%- else -%}
   {%- assign card_style = post.color | prepend: 'border border-' -%}
   {%- if post.color -%}
