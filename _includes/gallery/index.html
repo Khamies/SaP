@@ -12,9 +12,8 @@
  
  
  <div class="gallery" id="gallery">
- <p>afnfhufhfofhufgugoughgoshgsd</p>
    {% for photo in site.gallery %}
-
+	<p>{{photo.image_link}}</p>
     {%- assign photo_link  = photo.image_link -%}
     {%- assign photo_desc  = photo.description -%}
 
