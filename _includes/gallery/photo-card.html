@@ -1,14 +1,14 @@
 <div class="wow animated fadeIn" data-wow-delay=".15s">
   <a href="{{ photo_url }}" class="project card text-themed" {%- if external and site.open_new_tab -%} target="_blank" {%- endif -%}>
-    {%- if project_img -%}
+    {%- if photo_img -%}
     <img id="{{ photo_id }}-img" class="card-img-top" src="{{ photo_img }}" alt="{{ photo_name }}" />
     {%- endif -%}
     <div class="card-body">
       <h5 id="{{ photo_id }}-name" class="card-title">
-          {%- if project_type == "remote" -%}
+          {%- if photo_type == "remote" -%}
           <i class="fab fa-github" data-toggle="tooltip" data-placement="bottom" data-delay="250" title="GitHub Repository"></i> |&nbsp;
           {%- endif -%}
-        {{ project_name }}
+        {{ photo_name }}
       </h5>
       <p id="{{ photo_id }}-desc" class="card-text">{{ photo_desc }}</p>
       <p id="{{ photo_id }}-tools" class="card-text">
