@@ -11,11 +11,14 @@
  </div>
  
  
+ <div class="gallery" id="gallery">
    {% for photo in site.gallery %}
 
-    {%- assign photo_link  = photo.link -%}
+    {%- assign photo_link  = photo.image_link -%}
     {%- assign photo_desc  = photo.description -%}
 
-    {% include projects/photo_item.html %}
+    {% include gallery/photo_item.html %}
 
   {% endfor %}
+  
+  </div>
