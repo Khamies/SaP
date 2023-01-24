@@ -34,6 +34,7 @@
 
   {% endfor %}
 
+<p> HELLO HELLO HELLO </p>
   <!-- Local Projects -->
   {% for project in site.projects %}
 
@@ -43,7 +44,7 @@
     {%- assign project_name  = project.name -%}
     {%- assign project_desc  = project.description -%}
     {%- assign project_tools = project.tools -%}
-<p> "HELLO HELLO HELLO <p>
+
     {%- if project.external_url -%}
       {%- assign project_url = project.external_url -%}
       {%- assign external    = true -%}
