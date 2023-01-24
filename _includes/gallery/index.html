@@ -11,6 +11,7 @@
  </div>
  
  <script>
+ 
  $(function() {
   var selectedClass = "";
   $(".filter").click(function(){
@@ -22,12 +23,15 @@
       $("#gallery").fadeTo(300, 1);
     }, 300);
   });
-});</script>
+});
+
+</script>
  
  <div class="gallery" id="gallery">
    {% for photo in site.gallery %}
-    {%- assign photo_link  = photo.image_link -%}
-    {%- assign photo_desc  = photo.description -%}
+   
+    {%- assign photo_link = photo.image_link -%}
+    {%- assign photo_desc = photo.description -%}
 
     {% include gallery/photo_item.html %}
 
