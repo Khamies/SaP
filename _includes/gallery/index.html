@@ -30,8 +30,13 @@
  <div class="gallery" id="gallery">
    {% for photo_unit in site.gallery %}
    
-    {%- assign photo_link_horizontal = photo_unit.photo_link_horizontal -%}
-    {%- assign photo_link_vertical = photo_unit.photo_link_vertical -%}
+    {%- assign photo_link_1 = photo_unit.photo_link_horizontal -%}
+    {%- assign photo_link_2 = photo_unit.photo_link_vertical -%}
+    {%- assign photo_link_3 = photo_unit.photo_link_horizontal -%}
+    {%- assign photo_link_4 = photo_unit.photo_link_vertical -%}
+    {%- assign photo_link_5 = photo_unit.photo_link_horizontal -%}
+    {%- assign photo_link_6 = photo_unit.photo_link_vertical -%}
+    
     {%- assign photo_desc = photo.description -%}
 
     {% include gallery/photo_item.html %}
