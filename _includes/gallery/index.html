@@ -25,8 +25,8 @@
 });</script>
  
  <div class="gallery" id="gallery">
-   {% for photo in site.gallery %}
-	<p>{{photo.image_link}}</p>
+   {% for photo in site.projects %}
+	<p>{{photo.project_name}}</p>
     {%- assign photo_link  = photo.image_link -%}
     {%- assign photo_desc  = photo.description -%}
 
