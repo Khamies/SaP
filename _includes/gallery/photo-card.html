@@ -1,12 +1,12 @@
 <div class="wow animated fadeIn" data-wow-delay=".15s">
-  <a href="{{ photo_url }}" class="project card text-themed" {%- if external and site.open_new_tab -%} target="_blank" {%- endif -%}>
+  <a href="{{ photo_url }}" class="card text-themed" {%- if external and site.open_new_tab -%} target="_blank" {%- endif -%}>
     {%- if photo_img -%}
     <img id="{{ photo_id }}-img" class="card-img-top" src="{{ photo_img }}" alt="{{ photo_name }}" />
     {%- endif -%}
     <div class="card-body">
       <h5 id="{{ photo_id }}-name" class="card-title">
           {%- if photo_type == "remote" -%}
-          <i class="fab fa-github" data-toggle="tooltip" data-placement="bottom" data-delay="250" title="GitHub Repository"></i> |&nbsp;
+          <i class="fab fa-github" data-toggle="tooltip" data-placement="bottom" data-delay="250" title=""></i> |&nbsp;
           {%- endif -%}
         {{ photo_name }}
       </h5>
