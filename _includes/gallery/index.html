@@ -45,7 +45,7 @@
     {%- assign photo_desc  = photo.description -%}
     {%- assign photo_tags = photo.tags -%}
 
-    {%- if project.external_url -%}
+    {%- if photo.external_url -%}
       {%- assign project_url = photo.external_url -%}
       {%- assign external    = true -%}
     {%- else -%}
