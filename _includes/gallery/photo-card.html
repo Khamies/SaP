@@ -3,7 +3,7 @@
     {%- if photo_img -%}
     <img id="{{ photo_id }}-img" class="card-img-top" src="{{ photo_img }}" alt="{{ photo_name }}" />
     {%- endif -%}
-    <div class="card-body">
+   <!-->  <div class="card-body">
       <h5 id="{{ photo_id }}-name" class="card-title">
           {%- if photo_type == "remote" -%}
           <i class="fab fa-github" data-toggle="tooltip" data-placement="bottom" data-delay="250" title=""></i> |&nbsp;
@@ -16,7 +16,7 @@
         <span class="badge badge-pill text-primary border border-primary ml-1">{{ tag }}</span>
         {%- endfor -%}
       </p>
-    </div>
+    </div> <-->
   </a>
 </div>
 
