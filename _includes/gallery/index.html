@@ -1,50 +1,60 @@
-<div class="row">
 
-  <!-- Grid column -->
-  <div class="col-md-12 d-flex justify-content-center mb-5">
+<div class="card-columns m-3 mt-5">
 
-    <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="all">All</button>
-    <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="1">Mountains</button>
-    <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="2">Sea</button>
-    
+  <!-- Remote Projects 
+  {% for remote_project in page.remote_projects %}
 
- </div>
- 
- <script>
- 
- $(function() {
-  var selectedClass = "";
-  $(".filter").click(function(){
-    selectedClass = $(this).attr("data-rel");
-    $("#gallery").fadeTo(100, 0.1);
-    $("#gallery div").not("."+selectedClass).fadeOut().removeClass('animation');
-    setTimeout(function() {
-      $("."+selectedClass).fadeIn().addClass('animation');
-      $("#gallery").fadeTo(300, 1);
-    }, 300);
-  });
-});
+    {%- for repo in site.github.public_repositories -%}
 
-</script>
- 
- <div class="gallery" id="gallery">
-   {% for photo_unit in site.gallery %}
-   
-    {%- assign photo_link_horz1 = photo_unit.photo_link_horz1 -%}
-    {%- assign photo_link_vert1 = photo_unit.photo_link_vert1 -%}
-    {%- assign photo_link_horz2 = photo_unit.photo_link_horz2 -%}
-    {%- assign photo_link_vert2 = photo_unit.photo_link_vert2 -%}
-    {%- assign photo_link_horz3 = photo_unit.photo_link_horz3 -%}
-    {%- assign photo_link_vert3 = photo_unit.photo_link_vert3 -%}
-    
-    {%- assign photo_desc = photo.description -%}
+      {%- if remote_project == repo.name -%}
 
-    {% include gallery/photo_item.html %}
+        {%- assign project = repo -%}
+        {%- assign words = project.name | split: '-' -%}
+        
+        {%- capture titlecase -%}
+          {%- for word in words -%}
+            {{ word | capitalize | append: ' ' }}
+          {%- endfor -%}
+        {%- endcapture -%}
+
+        {%- assign project_type  = "remote" -%}
+        {%- assign project_id    = project.name -%}
+        {%- assign project_img   = false -%}
+        {%- assign project_name  = titlecase | strip -%}
+        {%- assign project_desc  = project.description -%}
+        {%- assign project_url   = project.html_url -%}
+        {%- assign project_tools = project.topics -%}
+        {%- assign external      = true -%}
+
+        {% include projects/project-card.html %}
+
+      {%- endif -%}
+
+    {%- endfor -%}
 
   {% endfor %}
-  
-  </div>
-  
-  
-  
-  
+  -->
+
+  <!-- Local Projects -->
+  {% for photo in site.gallery %}
+
+    {%- assign photo_type  = "local" -%}
+    {%- assign photo_id    = photo.name | slugify -%}
+    {%- assign photo_img   = photo.image -%}
+    {%- assign photo_name  = photo.name -%}
+    {%- assign photo_desc  = photo.description -%}
+    {%- assign photo_tags = photo.tags -%}
+
+    {%- if project.external_url -%}
+      {%- assign project_url = photo.external_url -%}
+      {%- assign external    = true -%}
+    {%- else -%}
+      {%- assign photo_url = photo.url | relative_url -%}
+      {%- assign external    = false -%}
+    {%- endif -%}
+
+    {% include projects/photo-card.html %}
+
+  {% endfor %}
+
+</div>
